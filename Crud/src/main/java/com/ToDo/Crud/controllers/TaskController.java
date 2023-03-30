@@ -13,7 +13,7 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping("/create")
+    @PostMapping("/")
     public Task createTask(@RequestBody Task task) {
         return taskService.createTask(task);
     }
@@ -29,7 +29,7 @@ public class TaskController {
         return taskService.updateTask(task);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id){
         taskService.deleteTask(id);
     }

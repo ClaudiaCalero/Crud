@@ -20,6 +20,12 @@ public class Task {
         this.completed = completed;
     }
 
+    public Task(long id, String task, boolean completed) {
+        this.id = id;
+        this.task = task;
+        this.completed = completed;
+    }
+
     public Task() {
     }
 
@@ -45,5 +51,14 @@ public class Task {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", task='" + task + '\'' +
+                ", completed=" + completed +
+                '}';
     }
 }

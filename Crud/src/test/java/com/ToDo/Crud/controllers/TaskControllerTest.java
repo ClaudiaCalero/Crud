@@ -70,4 +70,25 @@ public class TaskControllerTest {
 
     }
 
+    @Test
+    public void shouldCreateATaskWhenAPostRequestItsDone() throws Exception {
+        Mockito.when(taskService.createTask(FirstTask)).thenReturn(FirstTask);
+
+        MvcResult mvcResult = mockMvc.perform(
+                MockMvcRequestBuilders
+                        .post("/")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(this.objectMapper.writeValueAsString(FirstTask))
+        ).andReturn();
+
+        assertEquals(200, mvcResult.getResponse().getStatus());
+        Task result = objectMapper.readValue(
+                mvcResult.getResponse().getContentAsString(),
+                Task.class
+        );
+        assertEquals(FirstTask.getId(), result.getId());
+        assertEquals(FirstTask.getTask(), result.getTask());
+        assertEquals(FirstTask.isCompleted(), result.isCompleted());
+    }
+
 }

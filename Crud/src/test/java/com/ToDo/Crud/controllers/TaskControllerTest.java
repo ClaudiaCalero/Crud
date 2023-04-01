@@ -40,6 +40,34 @@ public class TaskControllerTest {
     Task ThirdTask = new Task(3L, "Do a login/register", true);
     Task FourthTask = new Task(4L, "Front done", false);
 
+    @Test
+    public void shouldReturnAllTasksWhenCallingGetAllTask() throws Exception {
+        List<Task> tasks = new ArrayList<>(Arrays.asList(FirstTask, SecondTask, ThirdTask, FourthTask));
 
+        Mockito.when(taskService.getAllTask()).thenReturn(tasks);
+
+        MvcResult mvcResult = mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andReturn();
+
+        assertEquals(200, mvcResult.getResponse().getStatus());
+        List<Task> result = objectMapper.readValue(
+                mvcResult.getResponse().getContentAsString(),
+                objectMapper.getTypeFactory().constructCollectionType(List.class, Task.class)
+        );
+        assertEquals(tasks.size(), result.size());
+
+        for(int i = 0; i < tasks.size(); i++) {
+            Task task1 = tasks.get(i);
+            Task result1 = result.get(i);
+
+            assertEquals(task1.getId(), result1.getId());
+            assertEquals(task1.getTask(), result1.getTask());
+            assertEquals(task1.isCompleted(), result1.isCompleted());
+        }
+
+    }
 
 }

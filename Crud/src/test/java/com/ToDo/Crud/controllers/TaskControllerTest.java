@@ -91,4 +91,27 @@ public class TaskControllerTest {
         assertEquals(FirstTask.isCompleted(), result.isCompleted());
     }
 
+    @Test
+    public void shouldUpdateATaskWhenAPutRequestIsDone() throws Exception {
+        Mockito.when(taskService.updateTask(SecondTask)).thenReturn(SecondTask);
+        MvcResult mvcResult = mockMvc.perform(
+                MockMvcRequestBuilders
+                        .put("/2")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(this.objectMapper.writeValueAsString(SecondTask))
+        ).andReturn();
+        assertEquals(200, mvcResult.getResponse().getStatus());
+        Task result = objectMapper.readValue(
+                mvcResult.getResponse().getContentAsString(),
+                Task.class
+        );
+        assertEquals(SecondTask.getId(), result.getId());
+        assertEquals(SecondTask.getTask(), result.getTask());
+        assertEquals(SecondTask.isCompleted(), result.isCompleted());
+
+    }
+
+
+
+
 }

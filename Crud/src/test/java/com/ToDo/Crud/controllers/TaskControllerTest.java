@@ -17,10 +17,12 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
 public class TaskControllerTest {
@@ -111,7 +113,17 @@ public class TaskControllerTest {
 
 
     @Test
-    public Task shouldDeleteATaskWhenADeleteRequestIsDone() throws Exception {
+    public void shouldDeleteATaskWhenADeleteRequestIsDone() throws Exception {
+
+        Mockito.when(taskService.deleteTask(FourthTask.getId())).thenReturn(Optional.of(FourthTask));
+
+        MvcResult mvcResult = mockMvc.perform(
+                        MockMvcRequestBuilders
+                                .delete("/4")
+                                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk()).andReturn();
+
+        assertTrue(!taskService.deleteTask(FourthTask.getId()).isEmpty());
 
     }
 }

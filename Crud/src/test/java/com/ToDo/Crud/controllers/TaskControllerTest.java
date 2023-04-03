@@ -123,7 +123,7 @@ public class TaskControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andReturn();
 
-        assertTrue(!taskService.deleteTask(FourthTask.getId()).isEmpty());
+        assertTrue(taskService.deleteTask(FourthTask.getId()).isPresent());
 
     }
 }

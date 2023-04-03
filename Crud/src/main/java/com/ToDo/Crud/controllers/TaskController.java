@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class TaskController {
@@ -29,7 +30,8 @@ public class TaskController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable Long id){
-        taskService.deleteTask(id);
+    public Optional<Task> deleteTask(@PathVariable Long id){
+        Optional<Task> deleteTask = taskService.deleteTask(id);
+        return taskService.deleteTask(id);
     }
 }

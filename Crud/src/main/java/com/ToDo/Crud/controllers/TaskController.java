@@ -31,7 +31,6 @@ public class TaskController {
 
     @DeleteMapping("/{id}")
     public Optional<Task> deleteTask(@PathVariable Long id){
-        Optional<Task> deleteTask = taskService.deleteTask(id);
         return taskService.deleteTask(id);
     }
 }

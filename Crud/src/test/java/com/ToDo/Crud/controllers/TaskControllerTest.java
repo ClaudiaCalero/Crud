@@ -123,7 +123,14 @@ public class TaskControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andReturn();
 
-        assertTrue(taskService.deleteTask(FourthTask.getId()).isPresent());
+        assertEquals(200, mvcResult.getResponse().getStatus());
+        Task result = objectMapper.readValue(
+                mvcResult.getResponse().getContentAsString(),
+                Task.class
+        );
+        assertEquals(FourthTask.getId(), result.getId());
+        assertEquals(FourthTask.getTask(), result.getTask());
+        assertEquals(FourthTask.isCompleted(), result.isCompleted());
 
     }
 }

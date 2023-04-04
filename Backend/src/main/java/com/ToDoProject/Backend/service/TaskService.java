@@ -1,7 +1,7 @@
-package com.ToDo.Crud.service;
+package com.ToDoProject.Backend.service;
 
-import com.ToDo.Crud.models.Task;
-import com.ToDo.Crud.repositories.TaskRepository;
+import com.ToDoProject.Backend.models.Task;
+import com.ToDoProject.Backend.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

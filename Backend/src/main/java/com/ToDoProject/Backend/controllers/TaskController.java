@@ -1,6 +1,6 @@
-package com.ToDo.Crud.controllers;
-import com.ToDo.Crud.models.Task;
-import com.ToDo.Crud.service.TaskService;
+package com.ToDoProject.Backend.controllers;
+import com.ToDoProject.Backend.models.Task;
+import com.ToDoProject.Backend.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,8 +1,7 @@
-package com.ToDo.Crud.controllers;
+package com.ToDoProject.Backend.controllers;
 
-import com.ToDo.Crud.models.Task;
-import com.ToDo.Crud.repositories.TaskRepository;
-import com.ToDo.Crud.service.TaskService;
+import com.ToDoProject.Backend.models.Task;
+import com.ToDoProject.Backend.service.TaskService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

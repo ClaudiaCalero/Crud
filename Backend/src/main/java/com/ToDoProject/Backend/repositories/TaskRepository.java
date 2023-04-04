@@ -1,10 +1,8 @@
-package com.ToDo.Crud.repositories;
+package com.ToDoProject.Backend.repositories;
 
-import com.ToDo.Crud.models.Task;
+import com.ToDoProject.Backend.models.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {

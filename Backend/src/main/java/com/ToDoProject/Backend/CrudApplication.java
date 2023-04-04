@@ -1,4 +1,4 @@
-package com.ToDo.Crud;
+package com.ToDoProject.Backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

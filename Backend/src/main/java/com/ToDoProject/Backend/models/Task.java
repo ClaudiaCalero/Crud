@@ -1,4 +1,4 @@
-package com.ToDo.Crud.models;
+package com.ToDoProject.Backend.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

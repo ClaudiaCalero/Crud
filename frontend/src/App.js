@@ -7,11 +7,8 @@ function App() {
   const [toDos, setToDos] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:8080/")
-      .then((data) => {
-        return data.json();
-      })
-      .then((tasks) => {
-        setToDos(tasks);
+      .then((response) => {
+        setToDos(response.data);
       })
   }, [])
   return (

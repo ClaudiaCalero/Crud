@@ -7,20 +7,29 @@ export default function ToDoList(props) {
         axios.delete("http://localhost:8080/" + id)
         console.log("delete" + id)
     }
+    function createTask() {
+
+    }
+
     return (
-        <ul>
-            {
-                data.map((toDo) => {
-                    return (
-                        <li key={toDo.id}>
-                            <Checkbox toDo={toDo}/>
-                            {toDo.task}
-                            <button onClick={() => deleteTask(toDo.id)}>delete</button>
-                        </li>
-                    )
-                })
-            }
-        </ul>
+        <div>
+            <section class="task-input">
+                <input type="text" placeholder="Add a new task" />
+            </section>
+            <ul>
+                {
+                    data.map((toDo) => {
+                        return (
+                            <li key={toDo.id}>
+                                <Checkbox toDo={toDo} />
+                                {toDo.task}
+                                <button onClick={() => deleteTask(toDo.id)}>delete</button>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
     )
 }
 

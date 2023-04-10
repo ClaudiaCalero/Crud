@@ -63,7 +63,7 @@ public class TaskControllerTest {
             Task result1 = result.get(i);
 
             assertEquals(task1.getId(), result1.getId());
-            assertEquals(task1.getTask(), result1.getTask());
+            assertEquals(task1.getContent(), result1.getContent());
             assertEquals(task1.isCompleted(), result1.isCompleted());
         }
 
@@ -86,7 +86,7 @@ public class TaskControllerTest {
                 Task.class
         );
         assertEquals(FirstTask.getId(), result.getId());
-        assertEquals(FirstTask.getTask(), result.getTask());
+        assertEquals(FirstTask.getContent(), result.getContent());
         assertEquals(FirstTask.isCompleted(), result.isCompleted());
     }
 
@@ -105,7 +105,7 @@ public class TaskControllerTest {
                 Task.class
         );
         assertEquals(SecondTask.getId(), result.getId());
-        assertEquals(SecondTask.getTask(), result.getTask());
+        assertEquals(SecondTask.getContent(), result.getContent());
         assertEquals(SecondTask.isCompleted(), result.isCompleted());
 
     }
@@ -128,7 +128,7 @@ public class TaskControllerTest {
                 Task.class
         );
         assertEquals(FourthTask.getId(), result.getId());
-        assertEquals(FourthTask.getTask(), result.getTask());
+        assertEquals(FourthTask.getContent(), result.getContent());
         assertEquals(FourthTask.isCompleted(), result.isCompleted());
 
     }

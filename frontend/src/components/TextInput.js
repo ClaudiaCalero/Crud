@@ -1,4 +1,4 @@
-import { useState } from "react"
+import './TextInput.css';
 
 export default function TextInput(props) {
     const text = props.text;
@@ -9,7 +9,7 @@ export default function TextInput(props) {
         console.log(event.target.value);
     }
     return (
-        <input value={text} type="text" placeholder={placeholder} onChange={(event) => onChangeHandler(event)}/>
+        <input value={text} type="text" placeholder={placeholder} onChange={(event) => onChangeHandler(event)} />
     )
 
 }

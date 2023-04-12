@@ -13,14 +13,14 @@ function App() {
 
   function deleteTask(id) {
     axios.delete("http://localhost:8080/" + id)
-    .then(() => {
-      console.log('delete' + id);
-      refreshToDos(); 
-    })
-    .catch(error => {
-      console.error('Task could not be deleted', error);
-    });
-}
+      .then(() => {
+        console.log('delete' + id);
+        refreshToDos();
+      })
+      .catch(error => {
+        console.error('Task could not be deleted', error);
+      });
+  }
 
   function createToDo() {
     const toDo = {
@@ -54,9 +54,9 @@ function App() {
 
   function refreshToDos() {
     axios.get("http://localhost:8080/")
-    .then((response) => {
-      setToDos(response.data);
-    })
+      .then((response) => {
+        setToDos(response.data);
+      })
   }
 
   useEffect(() => {
@@ -65,7 +65,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To Do List</h1>
+      <h1 className='Title'>
+        <img src='https://cdn-icons-png.flaticon.com/512/813/813670.png' width="30" />
+        Tasks</h1>
       <div>
         <section>
           <TextInput text={newToDoName} setText={setNewToDoName} placeholder="Add a new task" />

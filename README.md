@@ -1,6 +1,6 @@
 # To-Do Project
 ## Hi friend! <img src="https://c.tenor.com/p2Fs2DoSLWYAAAAC/hello-cute.gif" width="40">
-The To-Do-List Project is a to-do list application built with Java-Spring for the backend and JavaScript-React for the frontend. 
+The To-Do Project is a to-do list application built with Java-Spring for the backend and JavaScript-React for the frontend. 
 Both components are connected, allowing users to create, read, update, and delete tasks from the front-end and back-end. 
 The project includes a RESTful API that can be accessed via Postman, allowing users to perform CRUD (Create, Read, Update, Delete) operations on the to-do list.
 

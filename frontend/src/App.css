@@ -60,7 +60,6 @@ ul {
 
 .update-submit {
   display: flex;
-  
 }
 
 .list-todo {
@@ -72,6 +71,7 @@ ul {
     display: flex;
     gap: 10px;
 }
+
 .input-task {
   border: none;
   outline: none;
@@ -81,16 +81,6 @@ ul {
   font-size: 1em;
   width: 100%;
   margin-top: 10px;
-}
-
-.button-submit {
-  background-color: #1f1f20;
-  border: none;
-  background-color: inherit;
-  right: 25px;
-  font-size: 1.2em;
-  margin-top: 9px;
-  margin-left: 10px;
 }
 
 button {

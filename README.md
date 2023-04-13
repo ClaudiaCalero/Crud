@@ -108,7 +108,7 @@ Contributions to the To-Do-List Project are welcome. If you find a bug or have a
 
 
 ## Desktop Version 
-![MockUpToDo](https://user-images.githubusercontent.com/92159714/231759481-92a997f8-711a-4ecd-b06e-a63f2161910e.jpeg)
+![mockup](https://user-images.githubusercontent.com/92159714/231806814-260b8691-0baa-473f-991a-698f95985c3e.jpeg)
 
 
 

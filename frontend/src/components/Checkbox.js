@@ -17,7 +17,7 @@ export default function Checkbox(props) {
         setIsCompleted(completed);
     }
     return (
-        <input type="checkbox" onClick={() => onClickHandler(toDo)} checked={isCompleted}></input>
+        <div className={`check ${isCompleted && 'checked'}`} onClick={() => onClickHandler(toDo)} checked={isCompleted}></div>
     )
 }
 

@@ -9,7 +9,7 @@ export default function TextInput(props) {
         console.log(event.target.value);
     }
     return (
-        <input value={text} type="text" placeholder={placeholder} onChange={(event) => onChangeHandler(event)} />
+        <input className='input-task' value={text} type="text" placeholder={placeholder} onChange={(event) => onChangeHandler(event)} />
     )
 
 }

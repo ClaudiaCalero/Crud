@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&display=swap");
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 * {
   font-family: "Maven Pro", sans-serif;
   padding: 0;
   margin: 0;
+  
 }
 
 
@@ -12,28 +18,99 @@
   display: flex;
   justify-content: center;
   padding: 30px;
-  height: 100vh;
-  background: #171717;
+  background: #191B1D;
+  min-height: 100vh;
 }
 
 .App {
   width: 65%;
   background: #242426;
   padding: 40px;
-  height: 80vh;
-  position: fixed;
   bottom: 30px;
   color: #929292;
-
+  margin: 30px;
 }
+ul {  
+  list-style-type: none;  
+  
+}
+
 .Title {
-  font-size: 1.7em;
+  font-size: 2.2em;
   color: #7A85D7;
   font-style: italic;
   display: flex;
   margin-bottom: 25px;
 }
 
+.wrap {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  width: 100%;
+  background: #242426;
+  margin-bottom: 2px;
+  position: relative;
+  border-radius: 4px;
+}
 
+.create-submit {
+  display: flex;
+}
 
+.update-submit {
+  display: flex;
+  
+}
 
+.list-todo {
+    left: 56px;
+    color: #c8c8c8;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+.input-task {
+  border: none;
+  outline: none;
+  background: #1f1f20;
+  color: #c8c8c8;
+  padding: 20px 0px 20px 48px;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button-submit {
+  background-color: #1f1f20;
+  border: none;
+  background-color: inherit;
+  right: 25px;
+  font-size: 1.2em;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+
+button {
+  background-color: #1f1f20;
+  border: none;
+  background-color: inherit;
+  font-size: 1.2em;
+ 
+}
+.check {
+  appearance: none;
+  font-size: 0.65em;
+  padding: 3.5px;
+  border: 2.4px #939393 solid;
+  border-radius: 50%;
+  color: #242426;
+  width: 13px;
+  height: 13px;
+}
+
+.checked {
+  background-color: #939393;
+}
